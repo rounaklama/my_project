@@ -1,0 +1,80 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+DBI asbtract the data from realtion databases management system which put customise in frontend of r..and make assumption.
+
+```{r}
+library(DBI)
+```
+Atfirst we have to build connection by using this function of DBI
+
+Here RSQLite is used as package in R which has there own database file[SQLite()].  Which DBI used to extract data.
+
+```{r}
+dbConnect(RSQLite::SQLite(), dpname = ":memory:")
+```
+Here SQLite is driver of package RQSLite database file and could not show result  because there is no database file named called "pritha"
+
+```{r}
+mom<-dbConnect(RSQLite::SQLite(),dbname=":pritha:")
+```
+memory is saved as file 
+```{r}
+mom <- dbConnect(RSQLite::SQLite(), ":memory:")
+```
+
+```{r}
+mom
+```
+```{r}
+dbListTables(mom)
+```
+character(0) says there is no table of data as its "memory" only.  
+so to create the table of mtcars list or any table of data into the driver(SQLite)
+DBI used in r is very useful because it allow  to input data of dataframes into database.
+
+```{r}
+dbWriteTable(mom, "mtcars",mtcars)
+```
+
+```{r}
+dbListTables(mom)
+```
+so it show as table 1
+
+```{r}
+dbListFields(mom, "mtcars")
+```
+```{r}
+dbReadTable(mom,"mtcars")
+```
+
+```{r}
+table=dbReadTable(mom,"mtcars")
+```
+
+Now upper example we have created data and extract in in R through DBI but actually in real world we have to face SQL and extract the data from  there SQL database into R with SQL code
+
+like this code
+```{r}
+dbSendQuery(mom, "SELECT* FROM mtcars WHERE cyl=4")
+```
+```{r}
+res=dbSendQuery(mom, "SELECT* FROM mtcars WHERE cyl=4")
+dbFetch(res)
+```
+
+```{r}
+res
+```
+
+
+```{r}
+dbClearResult(res)
+```
+we have to close it
+
+
+

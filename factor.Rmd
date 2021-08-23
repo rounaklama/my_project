@@ -1,0 +1,101 @@
+---
+title: "factor"
+output: html_notebook
+---
+FACTOR
+
+```{r}
+data=c("apple","mango","banana","jackfruit","pineapple","apple","banana","jackfruit","mango","mango","jackfruit","apple","mango")
+```
+
+```{r}
+unique(data)
+
+```
+
+```{r}
+factor1=factor(data)
+```
+
+```{r}
+factor1
+
+```
+```{r}
+levels(factor1)
+```
+
+```{r}
+as.integer(factor1)
+```
+```{r}
+sort(factor1)
+```
+CHANGING THEE LEVELING OF FACTOR1
+
+```{r}
+factor2=factor(factor1,levels = c("mango","apple","banana","jackfruit","pineapple"))
+```
+```{r}
+factor2
+
+```
+```{r}
+sort(factor2)
+```
+ EDITING LEVELs  WITTHIN FACTOR2 WITHOUT ADDING VALUES/VARIABLE IN data
+
+```{r}
+new.factor=factor(factor2,levels =c("Rounak","mango","apple","banana","jackfruit","pineapple") )
+
+```
+```{r}
+new.factor
+```
+NOW ORDERING IT WITH FREQUENCY OR HIGHEST TO LOW OR LOW TO HIGH
+1ST METHOD
+
+
+```{r}
+table(new.factor)
+```
+```{r}
+order.factor=factor(new.factor,levels = c("Rounak","pineapple","banana","jackfruit","apple","mango"))
+```
+```{r}
+order.factor
+```
+```{r}
+table(order.factor)
+```
+NEXT METHOD
+```{r}
+library(forcats)
+```
+HIGH TO LOW FREQUENCY
+```{r}
+fct_infreq(new.factor)
+```
+```{r}
+num=as.numeric(new.factor)
+f=factor(num)
+
+```
+
+```{r}
+fct_inseq(f)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+---
+title: "tidy data and pipe operator"
+output: html_notebook
+---
+TIDY DATA
+
+The data where each column is a variable, each row is an observation, and each cell contains a single value
+
+
+
+```{r}
+library(magrittr)
+```
+This is the sign of pipe
+```{r}
+%>% 
+```
+
+By pipe operator we can improve code by applying multiple function to have same as result with ease...example
+
+```{r}
+mean(1:20)
+```
+floor funtion that changes decimal to integer... ex.
+```{r}
+floor(10.5)
+```
+s0,
+
+```{r}
+floor(mean(1:20))
+```
+same result with pipe operator
+```{r}
+1:20 %>% mean() %>% floor()
+```
+Again
+paste is function that paste the string
+```{r}
+paste("hello","world","rounak","lama")
+```
+by pipe operaor
+```{r}
+"hello" %>% paste("world", "rounak",  "lama")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

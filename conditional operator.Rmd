@@ -1,0 +1,66 @@
+---
+title: "conditional operator "
+output: html_notebook
+
+---
+If /else 
+
+```{r}
+if(TRUE){
+  print("i am rounak lama")
+}
+```
+```{r}
+if(FALSE){
+  print("i am rounak lama")
+}
+```
+
+```{r}
+if(var>10){
+  print("10 is less than var")
+}else{
+  ("10 is grater than var")
+}
+
+```
+```{r}
+if(var==var1){
+  print("varis equal to var1")
+}else{
+  print("var is not equal to var1")
+}
+```
+
+```{r}
+
+if(var>var1) {
+  print("varis equal to var1")
+}else{
+  print("var is not equal to var1")
+}
+  
+```
+```{r}
+
+if(var>var1) {
+  print("varis equal to var1")
+}else if (var==var1){
+  print("var is not equal to var1")
+}else {
+  print("hello world")
+}
+```
+
+```{r}
+
+if(var>var1&var1>var) {
+  print("varis equal to var1")
+}else if (var==var1|var1>var){
+  print("var is not equal to var1")
+}else {
+  print("hello world")
+}
+
+```
+

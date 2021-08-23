@@ -1,0 +1,86 @@
+---
+title: "import and export data"
+output: html_notebook
+---
+readr read the .csv file in r
+```{r}
+library(readr)
+```
+atfirst the file should present in the file of r as .csv file
+```{r}
+read_csv("text.csv")
+```
+
+```{r}
+read_csv("text.csv",col_names = F)
+```
+
+```{r}
+df=read_csv("text.csv")
+```
+```{r}
+df
+```
+it shows tibble dataframe
+```{r}
+class(df)
+```
+how to write and read csv file 
+
+```{r}
+write_csv(iris,"iris.csv")
+```
+
+```{r}
+read_csv("iris.csv")
+```
+Import the data from excel..
+we have to save the data 1st in excel sheet.
+so to read the excel file the function called
+
+```{r}
+library(readxl)
+```
+
+```{r}
+read_xlsx("family text.xlsx")
+```
+
+```{r}
+excel.imp<-read_xlsx("family text.xlsx")
+```
+
+```{r}
+excel.imp
+
+```
+```{r}
+class(excel.imp)
+```
+{httr} is the function which is used to read from the webpages.
+it has six functions
+```{r}
+library(httr)
+```
+
+```{r}
+httr::GET("tidyverse.org")
+```
+
+
+```{r}
+web=httr::GET("tidyverse.org")
+```
+
+```{r}
+web$url
+```
+```{r}
+web$content
+```
+
+```{r}
+content(web)
+```
+
+

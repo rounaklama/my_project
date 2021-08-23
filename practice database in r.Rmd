@@ -1,0 +1,52 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+boy=dbConnect(RSQLite::SQLite(), ":memory:")
+```
+
+```{r}
+boy
+```
+
+```{r}
+dbWriteTable(boy,"airquality",airquality)
+```
+
+```{r}
+boy
+```
+```{r}
+class(boy)
+```
+```{r}
+dbListTables(boy)
+```
+```{r}
+dbReadTable(boy,"airquality")
+```
+
+```{r}
+dbListFields(boy, "airquality")
+```
+
+
+
+```{r}
+dbSendQuery(boy,"SELECT* FROM airquality WHERE Month=5")
+```
+```{r}
+rou=dbSendQuery(boy,"SELECT* FROM airquality WHERE Month=5")
+```
+```{r}
+rou
+```
+```{r}
+dbFetch(rou)
+```
+
+```{r}
+dbClearResult(rou)
+```
+

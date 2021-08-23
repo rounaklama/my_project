@@ -1,0 +1,56 @@
+---
+title: "dplyr (filter verb)"
+output: html_notebook
+---
+Dplyr
+A grammer of data manipulation or  structure of data manipulation that provides a uniform set of verbs, helping to resolve the most frequent data manipulation hurdles.
+
+Thesea are the verbs
+
+filter()- selecting rows
+select()- selecting columns
+mutate()- add/change columns
+arrange()- order rows
+summarize()- condeses various value to one value.
+
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+starwars
+```
+starwars is the dataframe that has missing value and more real data which tibble data sets.
+
+```{r}
+starwars$skin_color
+```
+same result with doulbe bracket
+```{r}
+starwars[["skin_color"]]
+```
+```{r}
+starwars["skin_color"]
+```
+```{r}
+starwars %>% class()
+```
+
+```{r}
+starwars$skin_color %>% unique()
+```
+```{r}
+starwars %>% filter(skin_color=="pale")
+```
+
+
+```{r}
+starwars%>% filter(skin_color!="pale")
+```
+```{r}
+starwars %>% filter(skin_color!="fair",hair_color=="white")
+```
+
+
+

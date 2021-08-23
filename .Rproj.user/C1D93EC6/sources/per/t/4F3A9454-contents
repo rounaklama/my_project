@@ -1,0 +1,72 @@
+---
+title: "mutate verb"
+output: html_notebook
+---
+mutate verb is to change or add the variables or columns of the data and preserves the existing ones.
+
+so we introduce BMI index in the column of starwars datasets. 
+so, bmi= mass(kg)/{height(M)}^2
+
+```{r}
+library(dplyr)
+starwars
+```
+
+
+```{r}
+starwars %>% mutate(bmi=mass/((height/100)^2))
+```
+```{r}
+t=starwars %>% select(name,mass,height) %>% mutate(bmi=mass/(height/100)^2)
+```
+so round off bmi ..ex-
+```{r}
+round(253.254879666,2)
+```
+
+```{r}
+t %>% mutate(bmi,round(bmi,1))
+```
+some more example bt iris data set
+
+```{r}
+iris
+```
+now to find the area of petal
+```{r}
+iris %>% mutate(petal.area= Petal.Length * Petal.Width)
+```
+so if i have to find the petal.area value which range near the mean value than
+
+```{r}
+f=iris %>% mutate(petal.area=Petal.Length*Petal.Width) 
+  
+
+```
+
+MEAN VALUE OF PETAL AREA
+```{r}
+f %>% mutate(petal.area=mean(petal.area))
+```
+
+so we find that mean value of petal area is 5.7 and i want to find the value between  4 to 6 of petal area
+```{r}
+f %>% filter(petal.area>4,petal.area<6)
+```
+we can also have multiple columns 
+
+```{r}
+iris %>% mutate(sepal.area=Sepal.Length*Sepal.Width,
+                petal.area=Petal.Length*Petal.Width,
+                Sepal.Length=(Sepal.Length*2)
+) %>% select(-Sepal.Width,-Petal.Width)
+```
+
+
+
+
+
+
+
+
+

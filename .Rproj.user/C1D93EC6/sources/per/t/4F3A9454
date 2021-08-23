@@ -1,0 +1,28 @@
+{
+    "id": "4F3A9454",
+    "path": "G:/R_files/my_project/mutate().Rmd",
+    "project_path": "mutate().Rmd",
+    "type": "r_markdown",
+    "hash": "3891299462",
+    "contents": "",
+    "dirty": false,
+    "created": 1625375669933.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "tempName": "Untitled2",
+        "chunk_output_type": "inline",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "63,0",
+        "scrollLine": "42"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1625375660,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1625375660,
+    "read_only": false,
+    "read_only_alternatives": []
+}

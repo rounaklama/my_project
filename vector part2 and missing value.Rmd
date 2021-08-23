@@ -1,0 +1,87 @@
+---
+title: "vector part 2 and missing value"
+output: html_notebook
+---
+
+
+
+
+```{r}
+print("hello,world")
+```
+
+
+```{r}
+(v=1:10)
+```
+
+
+```{r}
+seq(from=1, to=10)
+```
+
+
+```{r}
+seq(from=1, to=100, by =2)
+```
+
+
+```{r}
+v
+```
+
+
+```{r}
+w=11:20
+w+5
+v+w
+```
+
+
+```
+```{r}
+seq(from=1, to=10) == (v=1:10)
+```
+
+```
+```{r}
+rounak=2:10
+rounak + v
+v[1:9]
+v new = v[1:9]
+vnew = v[1:9]
+
+rounak+vnew
+```
+
+
+```{r}
+NA
+C(2,NA,3)
+C("2","3")
+C(2,O.5)
+C(2,3)
+C("2","3","4")
+```
+
+```{r}
+c(2,NA,2)
+c(2,a,b,3)
+c(2,a,3)
+c(2,"a",3)
+c(3,"b",3)
+c(2,"a","b",3)
+```
+```{r}
+n= 2,NA,3
+n=c(2,NA,3)
+m=c(a,NA,b)
+m=c("s",NA,"m")
+b=c(T,NA,F)
+help
+is.na(m)
+
+
+(```
+
+))

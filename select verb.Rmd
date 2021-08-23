@@ -1,0 +1,130 @@
+---
+title: " select verb"
+output: html_notebook
+---
+
+
+dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges:
+
+mutate() = adds new variables that are functions of existing variables
+select() = picks variables based on their names.
+filter() = picks cases based on their values.
+summarise() = reduces multiple values down to a single summary.
+arrange() = changes the ordering of the rows.
+
+These all combine naturally with group_by() which allows you to perform any operation “by group”. You can learn more about them in vignette("dplyr"). As well as these single-table verbs, dplyr also provides a variety of two-table verbs, which you can learn about in vignette("two-table").
+
+If you are new to dplyr, the best place to start is the data transformation chapter in R for data science
+
+
+
+
+```{r}
+which(letters=="b")
+```
+SELECT VERB  MEANS SELECTING COLOUMNS 
+WE CAN CHANGE OR MANIPULATE THE COLOUMNS OF EXISTING DATAFRAME BUT CANNOT ADD NEW VARIABLE TO THE EXISTING DATAFRAME (WHICH IS DEFAULT i,e mtcars)
+
+```{r}
+starwars
+```
+IF WE WANT ONLY COLUMNS between  eye_color to species 
+
+```{r}
+colnames(starwars)
+```
+```{r}
+which(colnames(starwars)=="eye_color")
+```
+```{r}
+which(colnames(starwars)=="species")
+```
+```{r}
+starwars %>% select(6:11)
+```
+same result by putting names of the function which makes convinent
+```{r}
+starwars %>% select(which(colnames(starwars)=="eye_color"):which(colnames(starwars)=="species"))
+```
+OR puting dot in starwars after select funtion which pipe denote to dataframe starwars.
+```{r}
+starwars %>% select(which(colnames(.)=="eye_color"):which(colnames(.)=="species"))
+```
+also we can change the data as convinent
+```{r}
+starwars %>% select(11,10,9,8,7,6)
+```
+
+or we can direct put the name of the column as r is smart
+SAME RESULT
+
+```{r}
+starwars %>% select(species:eye_color)
+```
+AND ALSO REMOVE THE COLUMN BY PUTTING -SIGN 
+
+```{r}
+starwars %>% select(species:eye_color,-sex)
+```
+everything() is the function within select verb . it is used only in select()
+```{r}
+
+```
+
+
+```{r}
+install.packages("waldo")
+```
+
+
+WALDO is the package and compare() is the function that works under waldo.
+
+```{r}
+library(waldo)
+```
+
+```{r}
+t= starwars %>% select(everything())
+```
+
+```{r}
+compare(t,head(starwars))
+```
+if i want to see the specific column like from skin_color to species than this can be done and after that all colnames.
+
+```{r}
+t %>% select(skin_color:species,everything())
+```
+now if i want to see the data which contains suffix _color than we write
+```{r}
+starwars %>% select(hair_color,skin_color,eye_color)
+```
+Or easier way to do is puting function of dplyr i.e starts_with ,ends_with i.e
+```{r}
+starwars %>% select(ends_with("color"))
+```
+
+```{r}
+iris %>% select(starts_with("sepal"))
+```
+where()
+is the function help to find the things like 
+```{r}
+ starwars %>% select(where(is.integer))
+```
+```{r}
+starwars %>% select(where(is.character))
+```
+   ! = this denote not....(means no color at the end)
+   
+```{r}
+starwars %>% select(!ends_with("color"))
+```
+
+```{r}
+ starwars %>% select(starts_with("mass"), ends_with("color"))
+```
+
+
+
+

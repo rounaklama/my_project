@@ -1,0 +1,27 @@
+---
+title: "list"
+output: html_notebook
+---
+
+
+```{r}
+list("z",2, T)
+```
+```{r}
+c(y)
+```
+```{r}
+c(mode="list",5)
+```
+
+
+```{r}
+as.list(1:50)
+```
+
+
+
+```{r}
+g=list(a=5,b=1:10,head(iris))
+
+

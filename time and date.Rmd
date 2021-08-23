@@ -1,0 +1,81 @@
+---
+title: "date and time"
+output: html_notebook
+---
+```{r}
+library(lubridate)
+```
+```{r}
+today()
+```
+DATE AND TIME IS SET FROM HIGH TIME TO LOW AS DEFAULT.   EX- YEAR HAS MORE THAN MONTH..AND SOON.
+```{r}
+now()
+```
+```{r}
+class(today())
+```
+```{r}
+class(now())
+```
+```{r}
+string=ymd("2017-01-01")
+```
+
+```{r}
+string
+```
+```{r}
+class(string)
+```
+```{r}
+time="2021-5-19"
+time
+class(time)
+```
+```{r}
+time1=ymd(time)
+time1
+```
+
+
+```{r}
+class(time1)
+```
+
+```{r}
+ydm("3200-14-1")
+```
+format should be correct.ex- ymd,dmy....soon.
+```{r}
+dmy(30111998)
+```
+creating date from string
+
+```{r}
+mdy("january,31st,2017")
+data=mdy(january,31st,2017)
+data
+```
+```{r}
+mdy("january,31st,2017")
+```
+creating date time
+```{r}
+ymd_hms("1998-11-30 8-59-24")
+```
+```{r}
+mdy_hm("11-05-1997 2-59")
+```
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,106 @@
+---
+title: "loops and function"
+output: html_notebook
+---
+```{r}
+var=letters[1:15]
+for (apple in var) {
+  print(i)
+}
+```
+```{r}
+a= c(1:5)
+for (i in a) {
+  print(i^2)
+  
+}
+```
+```{r}
+a= c(1:5)
+for (i in a) {
+  storage[i^2]
+  
+}
+```
+FUNCTION
+
+```{r}
+seq(to=20, by= 3)
+```
+
+```{r}
+funtx=function(){
+print("this is the 1st function created")
+}
+```
+
+```{r}
+ f = function() {
+  (1:10)^2
+   
+}
+```
+
+```{r}
+rounak=function(){
+  a=1:100
+  sample(a,replace = FALSE)
+}
+```
+
+```{r}
+pritha=function(a=c(1,2,3,4,5)){
+  sum(a)
+  a^2
+  seq(from=2, to=4,by=1)
+}
+```
+
+
+```{r}
+pritha=function(a=c(1,2,3,4,5)){
+  sum(a)
+  a^2
+  
+}
+```
+
+```{r}
+
+pritha=function(a=c(1,2,3,4,5)){
+  sum(a)
+  
+  
+}
+```
+
+calling the function
+```{r}
+g= function(o) {
+  for(i in o){
+    print(i+2)
+}}
+```
+
+```{r}
+g(5)
+```
+```{r}
+g= function(o) {
+  for(i in 1:o){
+    print(i+2)
+}}
+```
+
+
+```{r}
+g(5)
+```
+
+
+
+
+
+
+
+

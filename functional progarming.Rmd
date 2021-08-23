@@ -1,0 +1,119 @@
+---
+title: "functional programming"
+output: html_notebook
+---
+
+
+LAPPLY
+
+
+```{r}
+rep(10,20)
+```
+
+```{r}
+lapply(rep(10,20),runif)
+```
+```{r}
+values<-lapply(rep(10,20),runif)
+mean=lapply(values,mean)
+
+```
+
+```{r}
+length(values)
+```
+```{r}
+length(mean)
+```
+```{r}
+values
+```
+```{r}
+class(values)
+```
+```{r}
+unlist(values)
+```
+```{r}
+unlist(mean)
+```
+nchar() gives the length of string
+
+```{r}
+nchar("hey")
+```
+```{r}
+mtcars
+```
+```{r}
+rownames(mtcars)
+```
+```{r}
+nchar(mtcars)
+```
+```{r}
+nchar(rownames(mtcars))
+
+```
+```{r}
+lapply(rownames(mtcars),nchar)
+```
+```{r}
+car=lapply(rownames(mtcars),nchar)
+```
+
+```{r}
+unlist(car)
+```
+```{r}
+car[4]
+
+```
+```{r}
+which(car == "Ford Pantera L")
+```
+```{r}
+
+simla=function(name) {
+  if(mtcars[name,9]==0)
+    mtcars[name,2]
+    else
+      mtcars[name,2]^2
+    
+  
+}
+```
+
+```{r}
+simla("Maserati Bora")
+
+```
+```{r}
+simla("Lincoln Continental")
+```
+same process of calling function through lapply
+
+```{r}
+lapply(rownames(mtcars), simla)
+```
+```{r}
+unlist(lapply(rownames(mtcars),simla))
+```
+```same result as in lapply by changing simla to same function...
+
+```{r}
+unlist(lapply(rownames(mtcars),function(name) {
+  if(mtcars[name,9]==0)
+    mtcars[name,2]
+    else
+      mtcars[name,2]^2
+}
+))
+
+```
+
+
+
+
+

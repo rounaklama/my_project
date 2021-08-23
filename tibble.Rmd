@@ -1,0 +1,76 @@
+---
+title: "Tibble"
+output: html_notebook
+---
+
+
+```{r}
+data.frame(iris)
+```
+
+
+```{r}
+tibble(iris)
+```
+```{r}
+data.frame(x=1:5,y=rep(1,5),z=x^2+y)
+```
+```{r}
+tibble(x=1:5,y=rep(1,5),z=x^2+y)
+```
+```{r}
+rl=data.frame(x=1:5,y=rep(1,5))
+```
+
+
+```{r}
+cbind(rl,rl$x^2+rl$y)
+```
+```{r}
+tibble(` `= "space",
+       `@`= "attherate",
+       `%`= "percentage")
+```
+```{r}
+tibble(
+  `:)` = "smile", 
+  ` ` = "space",
+  `2000` = "number"
+  )
+```
+```{r}
+tibble(
+  ~x, ~y, ~z,
+  #--|--|----
+  "a", 2, 3.6,
+  "b", 1, 8.5
+)
+```
+```{r}
+tribble(
+  ~x, ~y, ~z,
+  "a", 2, 3.6,
+  "b", 1, 8.5
+)
+```
+```{r}
+
+data.frame(` `= "space",
+       `@`= "attherate",
+       `%`= "percentage")
+```
+```{r}
+
+tibble("x", "y", "z",
+        "a"= 2,3.6,
+        "b"= 1,8.5
+          )
+```
+```{r}
+tb2=tibble("a"=lubridate::now()+runif(1e3)*25,
+       "b"=lubridate::today()+runif(1e3)*56,
+       "c"=runif(1e3),
+       "d"=sample(letters,1e3,replace=T)
+                  )
+```
+
